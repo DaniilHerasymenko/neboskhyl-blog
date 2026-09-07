@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+/* ── Light theme (default) ───────────────────────────────── */
+:root,
+[data-theme='light'] {
+  --c-bg:         #ffffff;
+  --c-fg:         #111111;
+  --c-body:       #3a3a3a;
+  --c-dim:        #555555;
+  --c-muted:      #888888;
+  --c-subtle:     #aaaaaa;
+  --c-ghost:      #cccccc;
+  --c-border:     #e5e5e5;
+  --c-border-sub: #f0f0f0;
+  --c-card:       #f9f9f9;
+  --c-tag:        #777777;
+  --c-link:       #111111;
+  --c-btn-border: #cccccc;
+}
+
+/* ── Dark theme ──────────────────────────────────────────── */
+[data-theme='dark'] {
+  --c-bg:         #141414;
+  --c-fg:         #ebebeb;
+  --c-body:       #b8b8b8;
+  --c-dim:        #999999;
+  --c-muted:      #6a6a6a;
+  --c-subtle:     #484848;
+  --c-ghost:      #333333;
+  --c-border:     #2a2a2a;
+  --c-border-sub: #1f1f1f;
+  --c-card:       #1c1c1c;
+  --c-tag:        #888888;
+  --c-link:       #ebebeb;
+  --c-btn-border: #444444;
+}
+
+/* ── Fonts ───────────────────────────────────────────────── */
+:root {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-ui:      'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 2px; }
+
+/* selection */
+::selection { background: rgba(0,0,0,0.08); }
+[data-theme='dark'] ::selection { background: rgba(255,255,255,0.1); }
+
+a { color: inherit; text-decoration: none; transition: opacity 0.15s; }
+a:hover { opacity: 0.65; }
+
+img { display: block; max-width: 100%; }

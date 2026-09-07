@@ -1,0 +1,18 @@
+# This file goes into public_html together with the contents of `dist/`
+# after you build the project. It makes React Router's client-side
+# routes (e.g. /archive, /post/some-slug, /about) work correctly when
+# a visitor opens them directly or refreshes the page, instead of
+# Hostinger's Apache server returning a 404.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # If the request is for a real file or folder that exists, serve it as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise, hand everything to index.html so React Router can render it
+  RewriteRule ^ index.html [L]
+</IfModule>
